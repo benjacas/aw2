@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "node index.mjs",
-    "escribir": "node escribirArchivo.mjs"
+    "escribir": "node escribirArchivo.mjs",
+    "lectura": "node lecturaApi.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module"
 }
+

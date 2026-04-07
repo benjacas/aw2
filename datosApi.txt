@@ -1,0 +1,3 @@
+json() {
+          return consumeBody(this, parseJSONFromBytes, instance, getInternalState);
+        }

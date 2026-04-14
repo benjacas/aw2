@@ -27,7 +27,7 @@ if (peticion.method==='GET'){
     if(peticion.method==='POST'){
         if(peticion.url === '/'){
 
-        const ruta = './contenido.txt'
+        const ruta = path.join('./contenido.txt')
         await fsp.writeFile(ruta, 'contenido falso')
             return respuesta.end('recurso creado')
         }

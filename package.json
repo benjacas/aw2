@@ -11,6 +11,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjacas/aw2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/benjacas/aw2/issues"
+  },
+  "homepage": "https://github.com/benjacas/aw2#readme"
 }
-

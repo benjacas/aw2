@@ -1,0 +1,15 @@
+###viendo peticiones
+
+###
+
+#GET
+GET https://ies21.edu.ar/
+
+###
+
+#GET PRODUCTOS
+
+###
+
+#GET LOCAL
+GET https://localhost:3000

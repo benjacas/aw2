@@ -1,9 +1,10 @@
 //modulo http
-import http from 'node:http'
-import fsp from 'node:fs/promises'
-import path from 'node:path'
+import http from 'node:http' //permite crear un servidor web
+import fsp from 'node:fs/promises' //permite crear promesas y usar async await para manejar archivos
+import path from 'node:path' // permite manejar rutas de archivos y directorios
 
 //creamos una instancia del servidor
+//createServer recibe una funcion cada vez que alguien hace una request al servidor, esa funcion recibe dos parametros, la peticion y la respuesta
 const app = http.createServer( async (peticion,respuesta)=>{
 if (peticion.method==='GET'){
 
@@ -41,5 +42,5 @@ if (peticion.method==='GET'){
 
 //abrimos puerto
 app.listen(3000,()=>{
-    console.log(`servidor escuchando en https://localhost:3000`)
+    console.log(`servidor escuchando en http://localhost:3000`)
 })

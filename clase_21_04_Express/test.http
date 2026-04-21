@@ -1,4 +1,4 @@
-GET http://192.169.0.118:3000
+GET http://localhost:3000
 
 ###
 GET http://localhost:3000/usuarios

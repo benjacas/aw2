@@ -45,7 +45,7 @@ export function altaProductos(req,res){
         //tenemos que modficar el id en la BD 
         productos.ultimo_id = ultimoI
         //responder
-        res.satatus(201).json('se dio de alta el producto')
+        res.satatus(201).json({mensaje:'se dio de alta el producto'})
 }
 
 
@@ -54,13 +54,24 @@ export function modificarProductos(){
     const id_producto = Number(req.params.id)
     //necesitamos los datos del producto a maodificar
     const producto=req.body
+
+
     prodcuctos.datos.map((producto)=>{
-        const indice = productos.datos.indexOf(producto)
-        console.log(indice)
-        //if (producto.id ===id_producto){
-            //productos.datos.push()
-        //}
+        
+        if (producto.id ===id_producto){
+            const indice = productos.datos.indexOf(producto)
+            //console.log(indice)
+            
+            //ACCEDO AL INDICE
+
+            productos.datos[indice] = {
+                id: id_producto,
+                ...producto
+            }
+        }
     })
+
+    res.json({})
 }
 
 export function eliminarProducto(){
@@ -68,7 +79,7 @@ export function eliminarProducto(){
     const id_producto = Number(req.params.id)
 
     //filter
-    const productosFiltrados = productos.filter((producto)=>{
+    const productosFiltrados = productos.datos.filter((producto)=>{
         return Number(producto.id) !== id_producto
     })
 

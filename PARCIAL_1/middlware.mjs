@@ -9,5 +9,5 @@ export function validarId(req, res, next) {
         })
     }
 
-    next()
+    next() //si todo sale bien, el middlware termina
 }

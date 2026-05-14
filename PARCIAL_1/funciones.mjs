@@ -30,30 +30,31 @@ export function filtrarPelicula(req, res) {
             url: 'http://localhost:3000/api/v1/peliculas/' + id_pelicula ,
             status: 200
         }
-        res.json(respuesta)
+        res.json(respuesta)//si el arreglo tiene elementos dentro, devuelve respuesta
     } else {
-        res.status(404).json({
+        res.status(404).json({//devuelve codigo de error 404 si no se encuentra el elemento
             mensaje: 'Pelicula no encontrada'
         })
     }
 }
 
 //endopoint procedural que cuenta cuantas peliculas hay por genero
+//filtra sobre un arreglo y cuenta cuántos elementos cumplen una condición.
 export function contarPorGenero(req, res) {
     //recibe el genero por parametro
     const genero = req.params.genero
 
     const resultado = peliculas.filter(pelicula => 
-        pelicula.genero.toLowerCase() === genero.toLowerCase()
-    ).length
+        pelicula.genero.toLowerCase() === genero.toLowerCase() //comparar genero para con toLowerCase para convertirlos a minuscula
+    ).length//lenght cuenta cuantos elementos tiene el arreglo, es lo que se termina guardando dentro de la variable rsultado
 
- // pregunta si hay elementos en el arreglo
+ // pregunta si hay elementos en el arreglo, se pregunta si la cantidad de peliculas es mayor a cero
     if (resultado > 0) {
         const respuesta = {
             datos: {genero, cantidad: resultado},
             url: 'http://localhost:3000/contarPorGenero/' + genero ,
             status: 200
-        }
+        } 
         //devuelve un json con el genero y la cantidad de peliculas que hay de ese genero
         res.json(respuesta)
     } else {

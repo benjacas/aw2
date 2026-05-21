@@ -1,15 +1,17 @@
-//import express from 'express' ---- solo si voy a usar express para alguna otra cosa
-import { Router } from "express"; //----- si no solo importo el lo que necesito
+// import express from 'express'
+import {Router} from 'express'
 import * as controlador from './controlador.productos.mjs'
-//instancias
+
+// Instanciamos
 const rutasProductos = new Router()
 
-//obtener todos los prodcutos
-app.get('/api/v1/productos',controlador.obtenerTodos)
-//obtener id
-app.get('/api/v1/productos/:id',controlador.obtenerUno)
-//eliminar uno
-app.delete('/api/v1/productos/:id',controlador, eliminarUno)
-
+// Obtener todos los productos
+rutasProductos.get('/api/v1/productos', controlador.obtenerTodos)
+rutasProductos.get('/api/v1/productos/:id', controlador.obtenerUno)
+rutasProductos.delete('/api/v1/productos/:id', controlador.eliminarUno)
 
 export default rutasProductos
+
+
+
+

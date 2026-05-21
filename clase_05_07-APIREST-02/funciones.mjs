@@ -1,4 +1,4 @@
-import productos from "./productos.mjs"
+import peliculas from "./peliculas.mjs"
 
 
 export function obtenerProductos(req, res) {
@@ -8,9 +8,9 @@ export function obtenerProductos(req, res) {
 
 export function obtenerProducto(req, res) {
     // Logica previa
-    const id_producto = Number(req.params.id)
+    const id_producto = Number(req.params.id) //<----------------------REVISAR-----------------------
     // Filter
-    const productosFiltrados = productos.datos.filter((producto) => {
+    const productosFiltrados = productos.datos.filter((producto) => {//<----------------------REVISAR-----------------------
         return Number(producto.id) === id_producto
     })
     // Verificamos si hay elementos en el arreglo
@@ -30,13 +30,13 @@ export function obtenerProducto(req, res) {
 
 export function altaProducto(req, res){
     // recibo los datos convertidos a JS
-    const producto = req.body
+    const producto = req.body //<----------------------REVISAR-----------------------
 
     // Genero una estructura para el producto a insertar
     const ultimoId = productos.ultimo_id + 1
     const productoFinal = {
         id: ultimoId,
-        ...producto
+        ...producto //<----------------------REVISAR-----------------------
     }
     // o
     // producto.id = ultimoId
@@ -50,20 +50,20 @@ export function altaProducto(req, res){
 
 export function modificarProducto(req, res){
     // Necesitamos saber el ID
-    const id_producto = Number(req.params.id)
+    const id_producto = Number(req.params.id)//<----------------------REVISAR-----------------------
     // Necesitamos los datos del producto a modificar
-    const nuevoProducto = req.body
+    const nuevoProducto = req.body //<----------------------REVISAR-----------------------
 
     productos.datos.map((producto)=>{
         // Necesitamos saber la ubicacion dentro del arreglo del producto que queremos modificar
         // Necesitamos el índice
         if(Number(producto.id) === id_producto){
             const indice = productos.datos.indexOf(producto)
-            console.log(productos.datos[indice])
+            console.log(productos.datos[indice]) //<----------------------REVISAR-----------------------
             // Accedo al indice
             productos.datos[indice] = {
                 id: id_producto,
-                ...nuevoProducto
+                ...nuevoProducto //<----------------------REVISAR-----------------------
             }
 
             // productos.datos[indice].nombre = producto.nombre
@@ -81,7 +81,7 @@ export function eliminarProducto(req, res) {
     const id_producto = Number(req.params.id)
     // Filter
     const productosFiltrados = productos.filter((producto) => {
-        return Number(producto.id) !== id_producto
+        return Number(producto.id) !== id_producto //<----------------------REVISAR-----------------------
     })
     // Verificamos si hay elementos en el arreglo
     const respuesta = {

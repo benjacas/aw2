@@ -1,10 +1,21 @@
 import * as modelo from './modelo.productos.mjs'
-
+import * as vista from './vista.productos.mjs'
 export function obtenerTodos(req, res){
     // Obtenemos de capa modelo la funcion
     const productos = modelo.obtenerTodos()
-    res.json(productos)
+    // En la vista modelamosla respuesta
+    const respuesta = vista.obtenerTodos(productos)
+    
+    res.json(respuesta)
 }
+
+
+
+
+
+
+
+
 
 export function obtenerUno(req, res){
     // obtenemos el id del parametro

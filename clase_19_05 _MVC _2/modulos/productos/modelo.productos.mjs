@@ -9,8 +9,17 @@ export function obtenerTodos() {
     Si tomamops los datos de un archivo JSON
     aquí estaria el readFile
     */
-    return productos
+    return productos //<- como se entregan los datos
 }
+
+
+
+
+
+
+
+
+
 
 
 export function obtenerUno(id) {

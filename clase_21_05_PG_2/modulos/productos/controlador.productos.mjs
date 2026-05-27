@@ -1,5 +1,6 @@
 import * as modelo from './modelo.productos.mjs'//importa como un objeto todo lo que hay en modelo
 import * as vista from './vista.productos.mjs' //importa como un objeto todo lo que hay en vista
+
 export async function obtenerTodos(req, res){
     // Obtenemos de capa modelo la funcion
     const productos = await modelo.obtenerTodos()

@@ -15,9 +15,9 @@ app.use('/login',express.static ('./fronts/front_login'))
 function chequearAcceso(req,res,next){
     const miIdentificador = req.signedCookies['sesion']
     if(miIdentificador === 'identificador'){
-        return next
+        return next()
     }
-    console.log(req.cookieSigned['sesion'])
+    console.log(req.signedCookies['sesion'])
     return res.redirect('/login')
 
 }

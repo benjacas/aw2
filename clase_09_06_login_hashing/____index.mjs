@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const PUERTO = process.env.PUERTO || 4000;
+const PUERTO = process.env.PUERTO || 4000; //leemos el puerto desde las variables de entorno (env), si no existe, usamos el 4000
 
 ////////////////
 
@@ -33,12 +33,15 @@ app.post('/registrar', async (req, res) => {
         return res.status(400).send('Usuario y contraseña son requeridos');
     }
     try {
-        const salt = bcrypt.genSaltSync(10);
+        const salt = bcrypt.genSaltSync(10); // se genera un salt o "condimento" para unirlo a la contraseña despues
         const hashingPass = bcrypt.hashSync(pass, salt);
         const resultado = await pool.query(
             'INSERT INTO usuarios (username, password_hash) VALUES ($1, $2)',
             [usuario, hashingPass]
         );
+
+
+
         if( resultado.rowCount > 0) {
             res.redirect('/login'); // Redirigimos al usuario a la página de login
         }else{
@@ -49,6 +52,9 @@ app.post('/registrar', async (req, res) => {
        res.status(500).json({mensaje:'Error en el servidor'})
     }
 });
+
+
+
 // Ruta para el POST login
 app.post('/autenticacion', async (req, res) => {
     const { usuario, pass } = req.body;

@@ -1,10 +1,9 @@
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken'
 
 
-//sign <--- firmar
+// sign <---- firmar
+// verify <--- verificar la firma
 
-//verify <--- verificar la firma
-
-jwt.sign({usuario: 'andres'},'largasupersecreta',{},(error,token) =>{
-    console.log (token)
+jwt.sign({usuario:'andres'},'largaysupersecreta',{expiresIn: '1h'},(error, token)=>{
+    console.log(token)
 })

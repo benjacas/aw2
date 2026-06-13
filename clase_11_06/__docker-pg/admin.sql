@@ -1,7 +1,7 @@
--- Conectar a la base de datos 'biblioteca'
+-- Conectar a la base de datos
 \c admin;
 
--- Crear la tabla 'libros' simplificada
+-- Crear la tabla
 CREATE TABLE usuarios (
     id SERIAL PRIMARY KEY,
     username VARCHAR(150) UNIQUE NOT NULL,

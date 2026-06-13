@@ -1,10 +1,10 @@
 {
-  "name": "clase_11_06",
+  "name": "clase-20260609-login-hashing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch index.mjs"
+    "dev":"node --watch index.mjs"
   },
   "keywords": [],
   "author": "",
@@ -12,18 +12,16 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.5.3",
+      "version": "^11.5.2",
       "onFail": "download"
     }
   },
   "type": "module",
   "dependencies": {
-    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
-    "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3",
+    "nanoid": "^5.1.11",
     "pg": "^8.21.0"
   }
 }
